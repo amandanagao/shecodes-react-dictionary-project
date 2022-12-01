@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -12,15 +13,25 @@ export default function DictionarySearch() {
     function handleSubmit(event) {
         event.preventDefault();
         alert(`Searching for "${keyword}" definition`);
+        callAxios();
     }
 
     function handleKeyword(event) {
         setKeyword(event.target.value);
     }
 
+    function handleResponse(response) {
+        console.log(response.data[0]);
+    }
+
+    function callAxios() {
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+        axios.get(apiUrl).then(handleResponse);
+    }
+
     return (
         <div className="DictionarySearch">
-            <form onSubmit={handleSubmit}>
+            <form className="DictionarySearch-form" onSubmit={handleSubmit}>
                 <InputGroup>
                     <Form.Control onChange={handleKeyword} />
                     <Button variant="outline-secondary">Search</Button>
