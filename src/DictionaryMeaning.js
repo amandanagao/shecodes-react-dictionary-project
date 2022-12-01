@@ -10,13 +10,22 @@ export default function DictionaryMeaning(props) {
             {props.meaning.definitions.map((definition, index) => {
                 return (
                     <div key={index}>
-                        <p>
-                            {definition.definition}
-                            <br />
-                            <em>{definition.example}</em>
-                        </p>
+                        <strong>Definition:</strong> {definition.definition}
+                        <br />
+                        <em>{definition.example}</em>
                     </div>
                 );
+            })}
+            {props.meaning.synonyms.map((synonym, index) => {
+                if (synonym) {
+                    return (
+                        <ul key={index}>
+                            <li>{synonym}</li>
+                        </ul>
+                    );
+                } else {
+                    return null;
+                }
             })}
         </div>
     );
