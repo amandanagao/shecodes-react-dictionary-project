@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function DictionaryMeaning(props) {
-    console.log(props.meaning);
     return (
         <div className="DictionaryMeaning">
             <h5>
