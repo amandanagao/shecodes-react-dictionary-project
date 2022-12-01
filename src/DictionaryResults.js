@@ -1,6 +1,8 @@
 import React from "react";
 import DictionaryMeaning from "./DictionaryMeaning";
 
+import "./DictionaryResults.css";
+
 export default function DictionaryResults(props) {
     if (props.results) {
         return (

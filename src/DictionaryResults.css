@@ -1,0 +1,3 @@
+.DictionaryResults h2:first-letter {
+    text-transform: capitalize;
+}
