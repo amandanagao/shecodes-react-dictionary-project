@@ -1,11 +1,11 @@
 import React from "react";
 
+import "./DictionaryMeaning.css";
+
 export default function DictionaryMeaning(props) {
     return (
         <div className="DictionaryMeaning">
-            <h5>
-                <em>{props.meaning.partOfSpeech}</em>
-            </h5>
+            <h5>{props.meaning.partOfSpeech}</h5>
             {props.meaning.definitions.map((definition, index) => {
                 return (
                     <div key={index}>
@@ -17,11 +17,32 @@ export default function DictionaryMeaning(props) {
             })}
             {props.meaning.synonyms.map((synonym, index) => {
                 if (synonym) {
-                    return (
-                        <ul key={index}>
-                            <li>{synonym}</li>
-                        </ul>
-                    );
+                    if (index === 0) {
+                        return (
+                            <span>
+                                <strong>Synonyms:</strong>{" "}
+                                <span
+                                    key={index}
+                                    className="DictionaryMeaning-synonyms"
+                                >
+                                    {synonym}
+                                </span>
+                                {" | "}
+                            </span>
+                        );
+                    } else {
+                        return (
+                            <span>
+                                <span
+                                    key={index}
+                                    className="DictionaryMeaning-synonyms"
+                                >
+                                    {synonym}
+                                </span>
+                                {" | "}
+                            </span>
+                        );
+                    }
                 } else {
                     return null;
                 }

@@ -14,7 +14,6 @@ export default function DictionarySearch() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        alert(`Searching for "${keyword}" definition`);
         callAxios();
     }
 

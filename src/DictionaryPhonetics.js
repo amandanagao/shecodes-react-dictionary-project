@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./DictionaryPhonetics.css";
+
 export default function DictionaryPhonetics(props) {
     console.log(props.phonetics);
     return (

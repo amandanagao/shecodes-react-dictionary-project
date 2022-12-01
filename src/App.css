@@ -1,10 +1,28 @@
+.App-card {
+    margin: 10px;
+    background: #ff2121;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Quicksand", sans-serif;
+}
+
 .App-header {
     text-align: center;
     font-size: 50px;
+    font-weight: bold;
+    background: #fd3f3f;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .App-footer {
     text-align: center;
-    font-size: 13px;
-    margin: 15px;
+    font-size: 15px;
+    margin: 10px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.App-footer a {
+    color: #fe1010;
 }

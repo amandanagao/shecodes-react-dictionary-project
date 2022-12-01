@@ -1,3 +1,16 @@
 .DictionarySearch .DictionarySearch-form {
     margin: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.DictionarySearch button {
+    background: #fff;
+    color: #fc2c2c;
+    border: 1px solid #c8ced4;
+}
+
+.DictionarySearch button:hover {
+    background: #fc2c2c;
+    color: #fff;
+    border: 1px solid #c8ced4;
 }

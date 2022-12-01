@@ -1,0 +1,11 @@
+.DictionaryMeaning h5 {
+    color: #fe1010;
+    font-style: italic;
+    font-weight: 600;
+    opacity: 90%;
+    margin: 25px 0px 10px;
+}
+
+.DictionaryMeaning .DictionaryMeaning-synonyms {
+    color: #fe1010;
+}
