@@ -1,3 +1,17 @@
+.DictionaryPhonetics {
+    font-size: 18px;
+}
+
+.DictionaryPhonetics .DictionaryPhonetics-text {
+    margin: 15px 0px;
+    opacity: 90%;
+}
+
 .DictionaryPhonetics a {
     color: #fe1010;
+    margin-left: 5px;
+}
+
+.DictionaryPhonetics a:hover {
+    color: #e30000;
 }

@@ -5,11 +5,13 @@ import DictionaryResults from "./DictionaryResults";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import "./DictionarySearch.css";
 
 export default function DictionarySearch() {
-    const [keyword, setKeyword] = useState(null);
+    const [keyword, setKeyword] = useState("");
     const [results, setResults] = useState(null);
 
     function handleSubmit(event) {
@@ -33,12 +35,23 @@ export default function DictionarySearch() {
 
     return (
         <div className="DictionarySearch">
-            <form className="DictionarySearch-form" onSubmit={handleSubmit}>
-                <InputGroup>
-                    <Form.Control onChange={handleKeyword} />
-                    <Button variant="outline-secondary">Search</Button>
-                </InputGroup>
-            </form>
+            <section>
+                <h1>What word do you want to look up?</h1>
+                <form className="DictionarySearch-form" onSubmit={handleSubmit}>
+                    <InputGroup>
+                        <Form.Control
+                            onChange={handleKeyword}
+                            placeholder="Search for a word"
+                        />
+                        <Button variant="outline-secondary">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </Button>
+                    </InputGroup>
+                </form>
+                <div className="DictionarySearch-hint">
+                    Suggested words: game, cat, wine, yoga...
+                </div>
+            </section>
             <DictionaryResults results={results} />
         </div>
     );

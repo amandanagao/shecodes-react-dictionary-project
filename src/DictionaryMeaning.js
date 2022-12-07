@@ -9,43 +9,22 @@ export default function DictionaryMeaning(props) {
             {props.meaning.definitions.map((definition, index) => {
                 return (
                     <div key={index}>
-                        <strong>Definition:</strong> {definition.definition}
-                        <br />
-                        <em>{definition.example}</em>
+                        <div className="DictionaryMeaning-definition">
+                            {definition.definition}
+                        </div>
+                        <div className="DictionaryMeaning-example">
+                            {definition.example}
+                        </div>
                     </div>
                 );
             })}
+
             {props.meaning.synonyms.map((synonym, index) => {
-                if (synonym) {
-                    if (index === 0) {
-                        return (
-                            <span>
-                                <strong>Synonyms:</strong>{" "}
-                                <span
-                                    key={index}
-                                    className="DictionaryMeaning-synonyms"
-                                >
-                                    {synonym}
-                                </span>
-                                {" | "}
-                            </span>
-                        );
-                    } else {
-                        return (
-                            <span>
-                                <span
-                                    key={index}
-                                    className="DictionaryMeaning-synonyms"
-                                >
-                                    {synonym}
-                                </span>
-                                {" | "}
-                            </span>
-                        );
-                    }
-                } else {
-                    return null;
-                }
+                return (
+                    <span key={index} className="DictionaryMeaning-synonyms">
+                        {synonym}
+                    </span>
+                );
             })}
         </div>
     );
