@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 import "./DictionarySearch.css";
 
@@ -25,6 +26,18 @@ export default function DictionarySearch() {
         setKeyword(event.target.value);
     }
 
+    function errorCheck(error) {
+        if (error.response.status === 404) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please enter a valid word!",
+            });
+            setResults(null);
+            setPhotos(null);
+        }
+    }
+
     function handleDictionaryResponse(response) {
         setResults(response.data[0]);
     }
@@ -36,7 +49,7 @@ export default function DictionarySearch() {
     function callAxios() {
         //documentation: https://https://dictionaryapi.dev/
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-        axios.get(apiUrl).then(handleDictionaryResponse);
+        axios.get(apiUrl).then(handleDictionaryResponse).catch(errorCheck);
 
         //documentation: https://www.pexels.com/api/documentation/
         let pexelsApiKey =
@@ -64,7 +77,7 @@ export default function DictionarySearch() {
                     </InputGroup>
                 </form>
                 <div className="DictionarySearch-hint">
-                    Suggested words: game, cat, wine, yoga...
+                    Suggested words: game, cat, cake, ocean...
                 </div>
             </section>
             <DictionaryResults results={results} />
