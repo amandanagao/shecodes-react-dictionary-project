@@ -8,14 +8,14 @@
 
 .DictionarySearch button {
     background: #fff;
-    color: #fc2c2c;
+    color: #fd523b;
     border: 1px solid #c8ced4;
     border-left: 0;
 }
 
 .DictionarySearch button:hover {
     background: #fff;
-    color: #ed0000;
+    color: #fd523b;
     border: 1px solid #c8ced4;
     border-left: 0;
 }

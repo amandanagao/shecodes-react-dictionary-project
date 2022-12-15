@@ -8,10 +8,10 @@
 }
 
 .DictionaryPhonetics a {
-    color: #fe1010;
+    color: #fd523b;
     margin-left: 5px;
 }
 
 .DictionaryPhonetics a:hover {
-    color: #e30000;
+    color: #fd523b;
 }
