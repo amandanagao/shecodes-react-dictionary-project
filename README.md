@@ -4,7 +4,7 @@
 
 ## Project built with:
 
-### HTML5
-### CSS3
-### React
-### Bootstrap
+### ➡️ HTML5
+### ➡️ CSS3
+### ➡️ React JS
+### ➡️ Bootstrap 5
